@@ -6,6 +6,8 @@ import { Prijava } from './components/Prijava'
 import { Homepage } from './components/Homepage'
 import { ZaboravljenaLozinka } from './components/ZaboravljenaLozinka'
 import { Profile } from './components/Profile'
+import { Admin } from './components/Admin'
+import { Status } from './components/Status'
 
 function App() {
   
@@ -21,6 +23,8 @@ function App() {
           <Route path='/registracija' element={<Register/>} />
           <Route path='/zaboravljenaLozinka' element={<ZaboravljenaLozinka />} />
           <Route path='/profil' element={<Profile />} />
+          <Route path='/admin' element={<Admin />} />
+          <Route path='/status' element={<Status />} />
         </Routes>
       </Router>
     </>

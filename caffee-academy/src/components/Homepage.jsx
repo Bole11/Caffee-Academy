@@ -29,6 +29,10 @@ export function Homepage() {
         navigate('/prijava');
     }
 
+    function handleNaruciBtn() {
+        navigate('/status');
+    }
+
     useEffect(() => {
         document.body.classList.add("homepage-body");
 
@@ -281,7 +285,7 @@ export function Homepage() {
                             <p>{`${total},00 RSD`}</p>
                         </div>
                         <div className={`swipeable-edge-orderDiv ${theme}`} onClick={stopEvent}>
-                            <button>
+                            <button onClick={handleNaruciBtn}>
                                 <img src={arrowRight} alt="Arrow right" />
                                 Naruči
                             </button>

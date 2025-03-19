@@ -1,0 +1,183 @@
+.Status-porudzbine {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 390px;
+  height: 844px;
+  top: 132px;
+  left: 97px;
+  background: #FFFFFF;
+}
+
+.nav-menu-status {
+  position: absolute;
+  width: 390px;
+  height: 60.77px;
+  top: 45.11px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background: #FFFFFF;
+  border: 1px solid #a9abac;
+  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.15);
+  border-radius: 0px 0px 10px 10px;
+}
+
+.Status-Id-porudzbine {
+  position: absolute;
+  width: 169px;
+  height: 21px;
+  top: 149.48px;
+  left: 115px;
+}
+
+.Status-Id-porudzbine span {
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 20.53px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #248CC5;
+}
+
+p {
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 33.38px;
+  letter-spacing: -1%;
+  vertical-align: middle;
+  color: #164864;
+  margin-top: 20px; /* Dodatni razmak iznad teksta */
+}
+
+/* Timer Container */
+.timer-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 17.89px;
+  position: absolute;
+  width: 179.41px;
+  height: 34px;
+  left: 105.3px;
+  top: 185.92px;
+}
+
+.timer-container img {
+  width: 32.52px;
+  height: 32.52px;
+  color: #164864;
+}
+
+.timer-display {
+  display: flex;
+  align-items: center;
+  width: 129px;
+  height: 34px;
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 26.02px;
+  line-height: 33.38px;
+  letter-spacing: -1%;
+  vertical-align: middle;
+  color: #164864;
+}
+
+/* Status Container */
+.status-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 250px; /* Pomerite status-container na dole */
+}
+
+.status-circle-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 272px;
+  height: 24px;
+  margin-bottom: 20px; /* Razmak između krugova i liste */
+}
+
+.status-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 272px;
+  font-family: Montserrat;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+  gap: 8px;
+  margin-bottom: 20px; /* Razmak između liste i slike */
+}
+
+.status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 74.92px;
+  height: 28.95px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.active {
+  color: #0d3b66; /* Plava boja za aktivni status */
+}
+
+.inactive {
+  color: #a0a0a0; /* Siva boja za neaktivni status */
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: gray;
+  position: relative;
+}
+
+.active-circle {
+  background: #248CC5; /* Plava boja za aktivni krug */
+}
+
+.inactive-circle {
+  background-color: gray; /* Siva boja za neaktivni krug */
+}
+
+.checkmark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 11px;
+  height: 9.43px;
+  color: #FAF5E4;
+  font-size: 12px; /* Veličina znaka ✔ */
+}
+
+.line {
+  width: 92.1px;
+  height: 0px;
+  border: 1.12624px solid #BFBFBF;
+}
+
+.active-line {
+  border-color: #0d3b66; /* Plava linija za aktivne statuse */
+}
+
+.inactive-line {
+  border-color: #a0a0a0; /* Siva linija za neaktivne statuse */
+}
