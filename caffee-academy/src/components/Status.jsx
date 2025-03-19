@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
-import "../styles/Status.css"; // Uvoz CSS fajla
-import clock from '../Images/Clock.png';
 import { useNavigate } from "react-router-dom";
+import "../styles/Status.css"; // Uvoz CSS fajla
+
+import clock from '../Images/Clock.png';
+import leftArrow from '../Images/left-arrow.png';
 
 export function Status() {
     const totalTime = 900; // Ukupno vreme 15 minuta
@@ -38,9 +40,9 @@ export function Status() {
 
     return (
         <div className="Status-porudzbine">
-    <div className="Status-bar"></div>
-    <nav className="nav-menu-status"></nav>
-    <div className="Status-Id-porudzbine">
+            <div className="Status-bar"></div>
+                <nav className="nav-menu-status"></nav>
+            <div className="Status-Id-porudzbine">
         <span>ID porudzbine: 125479</span>
     </div>
 
