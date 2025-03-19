@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.prijava-main-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.prijava-nav {
+    background-color: white;
+    width: 100%;
+    max-width: 400px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    margin-bottom: 20px;
+}
+
+.prijava-nav img {
+    width: 24px;
+    height: 24px;
+    margin-left: 30px;
+}
+
+.prijava-nav img:hover {
+    cursor: pointer;
+}
+
+.prijava-main-container {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 290px;
+    max-width: 400px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.prijava-title h2 {
+    color: #164864;
+    margin: 0 0 1rem 0;
+    font-size: 16px;
+}
+
+.prijava-title img {
+    margin-top: 1.3rem;
+    width: 170px;
+    height: 30px;
+}
+
+.prijava-div-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.prijava-form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    text-align: left;
+    width: 95%;
+    color: #164864;
+    font-size: 14px;
+}
+  
+.prijava-form-group label {
+    font-size: 14px;
+    margin-bottom: 0.1rem;
+    color: #164864;
+}
+  
+input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    background-color: #E8E8E8;
+    font-size: 11px;
+}
+
+input::placeholder {
+    opacity: 0.7;
+}
+  
+input:focus {
+    border: 1px solid #89b4d4;
+}
+
+.prijava-div-submit {
+    margin-bottom: 1rem;
+}
+
+.prijava-div-submit button {
+    width: 95%;
+    height: 35px;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 12px;
+    margin: 20px 0 10px 0;
+    cursor: pointer;
+
+
+    background: linear-gradient(180deg, #164864 0.59%, #2C91CA 214.21%),
+    linear-gradient(180deg, #164864 0.59%, #2C91CA 214.21%);
+    box-shadow: 2px 2px 4px 0px #00000040;
+}
+
+.prijava-div-submit button:hover {
+    background: #248CC5;
+}
+
+.prijava-div-submit span, a {
+    font-size: 11px;
+}
+
+.prijava-div-submit a {
+    color: #248CC5;
+}
+
+.prijava-zaboravljena-lozinka a {
+    color: #248CC5;
+}

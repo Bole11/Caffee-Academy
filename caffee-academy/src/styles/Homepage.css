@@ -1,0 +1,451 @@
+.homepage-body {
+    background:#FFFFFF; 
+    overflow: scroll;
+}
+
+.homepage-main-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+    padding-bottom: 120px;
+}
+
+.homepage-nav {
+    background-color: white;
+    width: 100%;
+    max-width: 400px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    box-shadow: 0px 3px 7px 0px #00000026;
+}
+
+.homepage-nav img {
+    width: 120;
+    height: 18px;
+    margin-bottom: 10px;
+}
+
+.homepage-nav button {
+    width: 80px;
+    height: 25px;
+    margin-bottom: 10px;
+    padding: 1px 10px;
+    font-size: 10px;
+    background: #248CC5;
+    color: #FFFFFF;
+    border-radius: 6px;
+    border: none;
+}
+
+.homepage-main-cointainer {
+    display: flex;
+    justify-content: center;  
+}
+
+.homepage-main-div {
+    width: 95%;
+    border-radius: 10px;
+    display: grid;
+}
+
+.homepage-main-div.dark {
+    background: #164864;
+}
+
+.homepage-main-div.light {
+    background: #FFFFFF;
+    border: 1px solid #248CC5;
+    box-shadow: 2px 2px 6px 0px #00000040;
+}
+
+.homepage-coffee-img-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FAF5E4;
+    border-radius: 10px;
+    margin: 15px 10px;
+    min-height: 115px;
+}
+
+.homepage-coffee-img-div img {
+    width: 100px;
+    height: 95px;
+}
+
+.homepage-coffee-img-div.light {
+    border-radius: 50%;
+    min-width: 115px;
+    background: #248CC5;   
+}
+
+.homepage-coffee-img-div.light img {
+    backdrop-filter: blur(1px)
+}
+
+.homepage-coffee-item {
+    display: flex;
+    justify-content: center;
+    transition: all 0.3s ease;
+    max-width: 400px;
+}
+
+.coffee-info {
+    width: 85%;
+    color: #FFFFFF;
+}
+
+.coffee-info h2 {
+    font-size: 14px;
+    margin-top: 12px;
+}
+
+.coffee-info p {
+    font-size: 12px;
+    opacity: 0.8;
+    line-height: 1.2;
+    margin: 5px 0;
+}
+
+.coffee-price {
+    display: flex;
+    justify-content: space-between;
+    color: #FFFFFF;
+    font-size: 12px;
+    margin: 10px 0;
+}
+
+.coffee-price h2 {
+    font-weight: 400;
+    font-size: 11px;
+}
+
+.coffee-price p {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.coffee-price button {
+    background: #248CC5;
+    width: 24px;
+    height: 24px;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.coffee-price button img {
+    width: 15px;
+    height: 15px;
+}
+
+.coffee-info-focused {
+    display: flex;
+    justify-content: space-between;
+}
+
+.coffee-info-focused h3 {
+    font-size: 14px;
+    margin-top: 12px;
+    margin-right: -20px;
+    display: none;
+}
+
+.coffee-info-focused.light h3, .coffee-info-focused.light h2, .coffee-info.light p {
+    color: #164864;
+}
+
+.homepage-coffee-item.focused {
+    transform: scaleY(1.05); /* Grows for the focused state */
+}
+
+.homepage-coffee-item .additional-elements {
+    display: none; /* Hide additional elements by default */
+}
+
+.homepage-coffee-item.focused .additional-elements, .homepage-coffee-item.focused .coffee-info-focused h3 {
+    display: block; /* Show additional elements when focused */
+}
+
+.homepage-coffee-item.focused .coffee-price {
+    display: none; /* Hide cena, price when focused*/
+}
+
+.coffee-options {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: -35px 0 10px 0px;
+}
+
+.coffee-options.light label {
+    box-shadow: 1.4px 1.4px 2.81px 0px #00000040;
+}
+
+.coffee-radio {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    background: #FAF5E4;
+}
+
+.coffee-radio input[type="radio"] {
+    display: none; /* Hide the radio button */
+}
+
+.coffee-radio img {
+    cursor: pointer; 
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+}
+
+.coffee-radio input[type="radio"]:checked + img {
+    background-color:#248CC5;
+}
+
+.coffee-customization {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+    align-items: center;
+    width: 90%;
+    justify-self: center;
+}
+
+.coffe-customatization-napomena {
+    grid-column: span 2;
+}
+
+.coffee-customization select {
+    background: #164864;
+    color: #FFFFFF;
+    border-radius: 5px;
+    width: 100%;
+    height: 30px;
+    font-size: 10px;
+    padding: 0 5px;
+    border: #FFFFFF 1px solid;
+}
+
+.customization-item {
+    display: flex;
+    flex-direction: column; /* Stack label and select vertically */
+    gap: 5px; /* Spacing between label and select */
+}
+
+.customization-item.div-napomena {
+    grid-column: span 2;
+}
+
+.customization-item label {
+    color: #FFFFFF;
+    background: #164864;
+    width: 32%;
+    height: 30px;
+    padding: 5px;
+    margin-left: 10px;
+    z-index: 1;
+}
+
+.customization-item.light label, .customization-item.light select {
+    background: #FFFFFF;
+    color: #248CC5;
+}
+
+.customization-item.light select, .napomena.light {
+    border-color: #248CC5;
+}
+
+#labelKafa {
+    width: 25%;
+}
+
+.customization-item.div-napomena label {
+    width: 100%;
+    padding: 0;
+    margin: 10px 0 15px 0;
+}
+
+#kafa, #mleko {
+    margin-top: -15px;
+}
+
+.napomena {
+    height: 25px;
+    background: #ffffffb7;
+    border: 1px solid #FFFFFF;
+    color: #164864;
+}
+
+.coffee-customization label:nth-child(3) {
+    margin-right: -110px;
+    width: 55px;
+}
+
+.coffee-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.coffee-actions button {
+    background: #248CC5;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.coffee-actions button img {
+    width: 18px;
+    height: 18px;
+}
+
+.coffee-actions-quantity {
+    margin: 20px 0px 10px 10px;
+    display: flex;
+    gap: 10px;
+    color: #FFFFFF;
+}
+
+.coffee-actions-quantity.light {
+    color: #248CC5;
+}
+
+.coffee-actions button:nth-child(2) {
+    background: linear-gradient(180deg, #248CC5 0%, rgba(36, 140, 197, 0) 100%);
+    color: #FFFFFF;
+    width: 140px;
+    height: 30px;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 20px 10px 10px 0;
+}
+
+.coffee-actions button:nth-child(2) img {
+    width: 13px;
+    height: 13px;
+    margin-right: 10px;
+}
+
+.coffee-actions button:nth-child(2):hover {
+    background-color: #248CC5;
+}
+
+.coffee-actions.light button:nth-child(2) {
+    background: #FF7F1B;
+}
+
+.coffee-actions.light button:nth-child(2):hover {
+    background: #fc7107;
+}
+
+.swipeable-edge-container-main {
+    position: fixed;
+    bottom: 0;
+    width: 400px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    min-height: 100px;
+    background: #248CC5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.swipeable-edge-container-div-price{
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ffffff36;
+    padding-bottom: 2px;   
+    margin: 0 20px;
+}
+
+.swipeable-edge-priceDiv {
+    color: #FFFFFF;
+    text-align: left;
+}
+
+.swipeable-edge-orderDiv {
+    margin-right: 40px;
+}
+
+
+.swipeable-edge-orderDiv button {
+    color: #FFFFFF;
+    background: #164864;
+    width: 120px;
+    height: 28px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.swipeable-edge-orderDiv button:hover {
+    background: #015481;
+}
+
+.swipeable-edge-orderDiv.light button {
+    background: #FF7F1B;
+}
+
+.swipeable-edge-orderDiv.light button:hover {
+    background: #fc7107;
+}
+
+.swipeable-edge-orderDiv button img {
+    width: 23px;
+    height: 23px;
+}
+
+.swipeable-edge-container-main.focused {
+    min-height: 200px;
+}
+
+.swipeable-edge-container-div-orders {
+    margin-left: 20px;
+    color: #FFFFFF;
+}
+
+.swipeable-edge-order-items {
+    margin: 10px 0 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.swipeable-edge-order-items button {
+    margin-right: 20px;
+    background: #248CC5;
+    border: none;
+    color: #FFFFFF;
+
+    z-index: 1;
+}
+
+button {
+    cursor: pointer;
+}
