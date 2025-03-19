@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import '../styles/Admin.css';
-import logo from '../Images/Logo.png';
+import logo from '../Images/logo.png';
 
 export function Admin() {
   const [orders, setOrders] = useState([
