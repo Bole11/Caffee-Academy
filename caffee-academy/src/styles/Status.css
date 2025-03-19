@@ -42,7 +42,7 @@
   color: #248CC5;
 }
 
-p {
+.status-container p {
   font-family: Montserrat;
   font-weight: 700;
   font-size: 24px;
