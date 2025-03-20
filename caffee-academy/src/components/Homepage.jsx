@@ -13,6 +13,8 @@ import Lcup from "../Images/Lcup.png";
 import cart from "../Images/cart.png";
 import minus from "../Images/minus.png";
 import arrowRight from "../Images/right-arrow.png";
+import lightTheme from "../Images/light.png";
+import darkTheme from "../Images/dark.png";
 
 export function Homepage() {
     const navigate = useNavigate();
@@ -152,7 +154,9 @@ export function Homepage() {
                 <nav className="homepage-nav">
                     <img src={logo} alt="Cafe Academy Logo" />
                     <button onClick={toggleTheme}>
-                {theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode"}
+                {theme === "light" ? 
+                <img src={lightTheme}/> :
+                <img src={darkTheme}/>}
             </button>
                     <button onClick={handlePrijavaBtn}>Prijavi se</button>
                 </nav>
