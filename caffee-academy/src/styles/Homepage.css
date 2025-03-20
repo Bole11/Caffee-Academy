@@ -45,6 +45,18 @@
     border: none;
 }
 
+.theme-btn {
+    padding: 0;
+    height: 40px;
+    background-color: #FFFFFF;
+    margin-right: -20px;
+}
+
+.theme-img {
+    width: 100%;
+    height: 100%;
+}
+
 .homepage-main-cointainer {
     display: flex;
     justify-content: center;  

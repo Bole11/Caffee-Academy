@@ -153,10 +153,10 @@ export function Homepage() {
             <section className="homepage-main-section">
                 <nav className="homepage-nav">
                     <img src={logo} alt="Cafe Academy Logo" />
-                    <button onClick={toggleTheme}>
+                    <button className="theme-btn" onClick={toggleTheme}>
                 {theme === "light" ? 
-                <img src={lightTheme}/> :
-                <img src={darkTheme}/>}
+                <img className="theme-img" src={lightTheme}/> :
+                <img className="theme-img" src={darkTheme}/>}
             </button>
                     <button onClick={handlePrijavaBtn}>Prijavi se</button>
                 </nav>
