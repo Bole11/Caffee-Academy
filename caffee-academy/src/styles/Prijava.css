@@ -39,7 +39,7 @@
     padding: 1rem;
     border-radius: 20px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    width: 290px;
+    width: 285px;
     max-width: 400px;
     text-align: center;
     margin-bottom: 40px;
@@ -77,6 +77,15 @@
     font-size: 14px;
     margin-bottom: 0.1rem;
     color: #164864;
+}
+
+.password-toggle-icon-prijava {
+    width: 20px;
+    height: 20px;
+    right: 90px;
+    top: 284px;
+    position: absolute;
+    cursor: pointer;
 }
   
 input {
