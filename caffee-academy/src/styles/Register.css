@@ -72,11 +72,20 @@
     color: #164864;
 }
 
-.register-form-group label img {
+.password-toggle-icon, .confirm-password-toggle-icon {
+    width: 20px;
+    height: 20px;
+    right: 80px;
     position: absolute;
-    right: 90px;
-    top: 365px;
     cursor: pointer;
+}
+
+.password-toggle-icon {
+    top: 368px;
+}
+
+.confirm-password-toggle-icon {
+    top: 442px;
 }
   
 input {

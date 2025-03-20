@@ -13,7 +13,12 @@ export function Register() {
     const [passwordIcon, setPasswordIcon] = useState(showPass);
     const [isPasswordFocused, setIsPasswordFocused] = useState(false);
 
+    const [inputTypeTwo, setInputTypeTwo] = useState('password');
+    const [confirmPasswordIcon, setConfirmPasswordIcon] = useState(showPass);
+    const [isConfirmPasswordFocused, setIsConfirmPasswordFocused] = useState(false);
+
     const passwordInputRef = useRef(null);
+    const confirmPaswordInputRef = useRef(null);
 
     function handleGoBack() {
         navigate('/prijava');
@@ -31,6 +36,13 @@ export function Register() {
 
         if (passwordInputRef.current) {
             passwordInputRef.current.focus();
+        }
+
+        setInputTypeTwo((prevType) => (prevType === 'password' ? 'text' : 'password'));
+        setConfirmPasswordIcon((prevIcon) => (prevIcon === showPass ? hidePass : showPass));
+
+        if (confirmPaswordInputRef.current) {
+            confirmPaswordInputRef.current.focus();
         }
     };
 
@@ -61,6 +73,10 @@ export function Register() {
         if (fieldName === 'password') {
             setIsPasswordFocused(true);
         }
+
+        if (fieldName === 'confirmPassword') {
+            setIsConfirmPasswordFocused(true);
+        }
     };
 
     function handleBlur(event) {
@@ -72,6 +88,10 @@ export function Register() {
 
         if (fieldName === 'password') {
             setIsPasswordFocused(false);
+        }
+
+        if (fieldName === 'confirmPassword') {
+            setIsConfirmPasswordFocused(false);
         }
     };
 
@@ -173,8 +193,22 @@ export function Register() {
                     </div>
                     <div className="register-form-group">Potvrdite lozinku
                         <label htmlFor="confirmPassword">
-                            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Potvrdite lozinku" autoComplete="on"
+                            <input 
+                            type={inputTypeTwo} 
+                            id="confirmPassword" 
+                            name="confirmPassword" 
+                            placeholder="Potvrdite lozinku" 
+                            autoComplete="on"
                             onFocus={handleFocus} onBlur={handleBlur} onChange={handleChange}/>
+                            {isConfirmPasswordFocused && (
+                                    <img
+                                    src={confirmPasswordIcon}
+                                    alt="Toggle Password Visibility"
+                                    onMouseDown={togglePasswordVisibility}
+                                    className="confirm-password-toggle-icon"
+                                    ref={confirmPaswordInputRef}
+                                />
+                                )}
                         </label>
                         <ul className={getValidationClass("confirmPassword")}>
                             <li className={getContentClass("confirmPassword", 1)}>Šifre se ne podudaraju</li>
