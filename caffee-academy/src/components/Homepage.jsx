@@ -152,7 +152,7 @@ export function Homepage() {
         <>
             <section className="homepage-main-section">
                 <nav className="homepage-nav">
-                    <img src={logo} alt="Cafe Academy Logo" />
+                    <img className="caffee-academy-logo" src={logo} alt="Cafe Academy Logo" />
                     <button className="theme-btn" onClick={toggleTheme}>
                 {theme === "light" ? 
                 <img className="theme-img" src={lightTheme}/> :

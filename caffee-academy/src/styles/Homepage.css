@@ -28,13 +28,15 @@
 }
 
 .homepage-nav img {
-    width: 120;
-    height: 18px;
     margin-bottom: 10px;
 }
 
+.caffee-academy-logo {
+    height: 18px;
+    width: 110px;
+}
+
 .homepage-nav button {
-    width: 80px;
     margin-bottom: 10px;
     font-size: 10px;
     color: #FFFFFF;
@@ -43,16 +45,26 @@
 }
 
 .prijava-btn {
+    width: 80px;
     height: 25px;
     padding: 1px 10px;
     background: #248CC5;
 }
 
+.prijava-btn:hover {
+    background: #015481;
+}
+
 .theme-btn {
     padding: 0;
-    height: 40px;
+    width: 60px;
+    height: 30px;
     background-color: #FFFFFF;
     margin-right: -20px;
+}
+
+.theme-btn:hover {
+    background-color: #FFFFFF;
 }
 
 .theme-img {
@@ -93,17 +105,14 @@
 
 .homepage-coffee-img-div img {
     width: 100px;
-    height: 95px;
+    height: 100px;
+    border-radius: 50%;
 }
 
 .homepage-coffee-img-div.light {
     border-radius: 50%;
     min-width: 115px;
     background: #248CC5;   
-}
-
-.homepage-coffee-img-div.light img {
-    backdrop-filter: blur(1px)
 }
 
 .homepage-coffee-item {
@@ -269,7 +278,7 @@
 .customization-item label {
     color: #FFFFFF;
     background: #164864;
-    width: 32%;
+    width: 54px;
     height: 30px;
     padding: 5px;
     margin-left: 10px;
@@ -286,7 +295,7 @@
 }
 
 #labelKafa {
-    width: 25%;
+    width: 44px;
 }
 
 .customization-item.div-napomena label {
