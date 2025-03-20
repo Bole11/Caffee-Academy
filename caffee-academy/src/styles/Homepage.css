@@ -100,7 +100,7 @@
     background: #FAF5E4;
     border-radius: 10px;
     margin: 15px 10px;
-    min-height: 115px;
+    max-height: 100px;
 }
 
 .homepage-coffee-img-div img {
@@ -111,7 +111,7 @@
 
 .homepage-coffee-img-div.light {
     border-radius: 50%;
-    min-width: 115px;
+    min-width: 100px;
     background: #248CC5;   
 }
 
@@ -123,7 +123,7 @@
 }
 
 .coffee-info {
-    width: 85%;
+    width: 90%;
     color: #FFFFFF;
 }
 
@@ -144,7 +144,6 @@
     justify-content: space-between;
     color: #FFFFFF;
     font-size: 12px;
-    margin: 10px 0;
 }
 
 .coffee-price h2 {
