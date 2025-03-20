@@ -1,8 +1,12 @@
+import { useNavigate } from "react-router-dom";
+import { useState, useEffect, useRef } from "react";
+
+import "../styles/ZaboravljenaLozinka.css"
+
 import leftArrow from "../Images/left-arrow.png";
 import logo from "../Images/logo.png";
-import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
-import "../styles/ZaboravljenaLozinka.css"
+import showPass from "../Images/pass-show.png";
+import hidePass from "../Images/pass-hide.png";
 
 export function ZaboravljenaLozinka() {
     const navigate = useNavigate();
@@ -10,6 +14,16 @@ export function ZaboravljenaLozinka() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [passwordStrength, setPasswordStrength] = useState(0);
+
+    const [inputType, setInputType] = useState('password');
+    const [passwordIcon, setPasswordIcon] = useState(showPass);
+    const [isPasswordFocused, setIsPasswordFocused] = useState(false);
+    const passwordInputRef = useRef(null);
+
+    const [inputTypeConfirm, setInputTypeConfirm] = useState('password');
+    const [confirmPasswordIcon, setConfirmPasswordIcon] = useState(showPass);
+    const [isConfirmPasswordFocused, setIsConfirmPasswordFocused] = useState(false);
+    const confirmPasswordInputRef = useRef(null);
 
     function handleGoBack() {
         navigate('/prijava');
@@ -46,7 +60,53 @@ export function ZaboravljenaLozinka() {
         const value = event.target.value;
         setPassword(value);
         setPasswordStrength(calculatePasswordStrength(value));
-    }
+    };
+
+    function togglePasswordVisibility(event) {
+        event.preventDefault();
+        
+        setInputType((prev) => (prev === 'password' ? 'text' : 'password'));
+        setPasswordIcon((prev) => (prev === showPass ? hidePass : showPass));
+    
+        if (passwordInputRef.current) {
+            passwordInputRef.current.focus();
+        };
+    };
+    
+    function toggleConfirmPasswordVisibility(event) {
+        event.preventDefault();
+        
+        setInputTypeConfirm((prev) => (prev === 'password' ? 'text' : 'password'));
+        setConfirmPasswordIcon((prev) => (prev === showPass ? hidePass : showPass));
+    
+        if (confirmPasswordInputRef.current) {
+            confirmPasswordInputRef.current.focus();
+        };
+    };
+    
+    function handleFocus(event) {
+        const fieldName = event.target.id;
+        
+        if (fieldName === 'password') {
+            setIsPasswordFocused(true);
+        }
+
+        if (fieldName === 'confirmPassword') {
+            setIsConfirmPasswordFocused(true);
+        }
+    };
+    
+    function handleBlur(event) {
+        const fieldName = event.target.id;
+
+        if (fieldName === 'password') {
+            setIsPasswordFocused(false);
+        }
+
+        if (fieldName === 'confirmPassword') {
+            setIsConfirmPasswordFocused(false);
+        }
+    };
 
     return (
         <section className="main-section">
@@ -57,7 +117,7 @@ export function ZaboravljenaLozinka() {
             {step === 1 && (
                 <main className="main-container">
                     <div className="main-div step1">
-                        <img src={logo} alt="Cafe Aacademy Logo"/>
+                        <img className="caffee-academy-logo-zab-lozinka" src={logo} alt="Cafe Aacademy Logo"/>
                         <h2>Zaboravili ste lozinku?</h2>
                         <p>Unesite svoj email da biste dobili instrukcije</p>
                         <input type="email" placeholder="Email" className="input" onChange={handleUserEmail} />
@@ -80,7 +140,7 @@ export function ZaboravljenaLozinka() {
             {step === 2 && (
                 <main className="main-container">
                     <div className="main-div step2">
-                        <img src={logo} alt="Cafe Aacademy Logo"/>
+                        <img className="caffee-academy-logo-zab-lozinka" src={logo} alt="Cafe Aacademy Logo"/>
                         <h2>Resetovanje lozinke</h2>
                         <p>Poslali smo kod na <b>{email}</b></p>
                         <div className="code-input">
@@ -108,16 +168,29 @@ export function ZaboravljenaLozinka() {
             {step === 3 && (
                 <main className="main-container">
                     <div className="main-div step3">
-                        <img src={logo} alt="Cafe Aacademy Logo"/>
+                        <img className="caffee-academy-logo-zab-lozinka" src={logo} alt="Cafe Aacademy Logo"/>
                         <h2>Resetovanje lozinke</h2>
                         <p>Lozinka mora da sadrži najmanje 8 karaktera</p>
                     <div className="input-password">
                         <label htmlFor="">Nova lozinka
                             <input 
-                            type="password" 
-                            placeholder="Unesite novu lozinku" 
-                            value={password}
-                            onChange={handlePasswordStrength}/>
+                                id="password"
+                                type={inputType} 
+                                placeholder="Unesite novu lozinku" 
+                                value={password}
+                                onFocus={handleFocus}
+                                onBlur={handleBlur}
+                                onChange={handlePasswordStrength}
+                                ref={passwordInputRef}
+                            />
+                            {isPasswordFocused && (
+                            <img 
+                                src={passwordIcon} 
+                                alt="Toggle Password Visibility" 
+                                onMouseDown={togglePasswordVisibility}
+                                className="password-toggle-icon"
+                            />
+                            )}
                         </label>
                         <div className="strength-indicator">
                             <div className={`strength-bar ${passwordStrength >= 1 ? (passwordStrength === 1 ? 'red' : passwordStrength === 2 ? 'yellow' : 'green') : ''}`}></div>
@@ -126,7 +199,22 @@ export function ZaboravljenaLozinka() {
                             <div className={`strength-bar ${passwordStrength >= 4 ? 'green' : ''}`}></div>
                         </div>
                         <label htmlFor="">Ponovite lozinku
-                            <input type="password" placeholder="Ponovite lozinku"/>
+                            <input 
+                                id="confirmPassword"
+                                type={inputTypeConfirm} 
+                                placeholder="Ponovite lozinku"
+                                onFocus={handleFocus}
+                                onBlur={handleBlur}
+                                ref={confirmPasswordInputRef}
+                            />
+                            {isConfirmPasswordFocused && (
+                            <img 
+                                src={confirmPasswordIcon} 
+                                alt="Toggle Password Visibility" 
+                                onMouseDown={toggleConfirmPasswordVisibility}
+                                className="confirm-password-toggle-icon"
+                            />
+                            )}
                         </label>
                     </div>
                         <button onClick={handleNextStep} className="btn">Resetuj lozinku</button>
@@ -147,7 +235,7 @@ export function ZaboravljenaLozinka() {
             {step === 4 && (
                 <main className="main-container">
                     <div className="main-div step4">
-                        <img src={logo} alt="Cafe Aacademy Logo"/>
+                        <img className="caffee-academy-logo-zab-lozinka" src={logo} alt="Cafe Aacademy Logo"/>
                         <h2>Uspešno resetovanje lozinke!</h2>
                         <p>Vaša lozinka je uspešno resetovana. Sada možete da se prijavite.</p>
                         <button onClick={handleGoBack} className="btn">Prijavite se</button>

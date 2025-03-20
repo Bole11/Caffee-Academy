@@ -53,7 +53,7 @@
     font-size: 16px;
 }
 
-.main-div img {
+.caffee-academy-logo-zab-lozinka {
     margin-top: 1.3rem;
     width: 170px;
     height: 30px;
@@ -216,4 +216,20 @@
 
 button:hover {
     background: #2C91CA;
+}
+
+.password-toggle-icon, .confirm-password-toggle-icon {
+    width: 20px;
+    height: 20px;
+    right: 80px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.password-toggle-icon {
+    top: 264px;
+}
+
+.confirm-password-toggle-icon {
+    top: 347px;
 }
