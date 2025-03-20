@@ -158,7 +158,7 @@ export function Homepage() {
                 <img className="theme-img" src={lightTheme}/> :
                 <img className="theme-img" src={darkTheme}/>}
             </button>
-                    <button onClick={handlePrijavaBtn}>Prijavi se</button>
+                    <button className="prijava-btn" onClick={handlePrijavaBtn}>Prijavi se</button>
                 </nav>
                 {coffees.length > 0 ? (
                     coffees.map((coffee) => (
