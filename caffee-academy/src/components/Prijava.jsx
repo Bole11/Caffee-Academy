@@ -14,6 +14,8 @@ export function Prijava () {
     const [inputType, setInputType] = useState('password');
     const [passwordIcon, setPasswordIcon] = useState(showPass);
     const [isPasswordFocused, setIsPasswordFocused] = useState(false);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
     const passwordInputRef = useRef(null);
 
@@ -22,7 +24,13 @@ export function Prijava () {
     };
 
     function handlePrijaviSe() {
-        navigate('/profil');
+        if (email === "jelena.pavlovic@quantox.academy" && password === "jelena") {
+            navigate('/profil');
+        } else if (email === "admin@caffee.academy" && password === "admin") {
+            navigate('/admin');
+        } else {
+            alert("Pogrešan email ili lozinka!");
+        };
     };
 
     function togglePasswordVisibility(event) {
@@ -43,6 +51,16 @@ export function Prijava () {
         setIsPasswordFocused(false);
     };
 
+    function handleInputChange(event) {
+        const { id, value } = event.target;
+        
+        if (id === 'email') {
+            setEmail(value);
+        } else if (id === 'lozinka') {
+            setPassword(value);
+        }
+    };
+
     return (
         <section className="prijava-main-section">
                     <nav className="prijava-nav">
@@ -56,7 +74,12 @@ export function Prijava () {
                         <div className="prijava-div-form">
                             <div className="prijava-form-group">Email
                                 <label htmlFor="email">
-                                    <input type="email" id="email" placeholder="Unesite email adresu" autoComplete="on" />
+                                    <input 
+                                    type="email" 
+                                    id="email" 
+                                    placeholder="Unesite email adresu" 
+                                    autoComplete="off"
+                                    onChange={handleInputChange} />
                                 </label>
                             </div>
                             <div className="prijava-form-group">Lozinka
@@ -68,7 +91,8 @@ export function Prijava () {
                                     autoComplete="off"
                                     onFocus={handleFocus}
                                     onBlur={handleBlur}
-                                    ref={passwordInputRef}/>
+                                    ref={passwordInputRef}
+                                    onChange={handleInputChange}/>
                                     {isPasswordFocused && (
                                     <img
                                         src={passwordIcon}
