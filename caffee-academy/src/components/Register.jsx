@@ -179,7 +179,7 @@ export function Register() {
                                     src={passwordIcon}
                                     alt="Toggle Password Visibility"
                                     onMouseDown={togglePasswordVisibility}
-                                    className="password-toggle-icon"
+                                    className="password-toggle-icon-register"
                                     ref={passwordInputRef}
                                 />
                                 )}
@@ -205,7 +205,7 @@ export function Register() {
                                     src={confirmPasswordIcon}
                                     alt="Toggle Password Visibility"
                                     onMouseDown={togglePasswordVisibility}
-                                    className="confirm-password-toggle-icon"
+                                    className="confirm-password-toggle-icon-register"
                                     ref={confirmPaswordInputRef}
                                 />
                                 )}

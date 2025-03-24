@@ -72,7 +72,7 @@
     color: #164864;
 }
 
-.password-toggle-icon, .confirm-password-toggle-icon {
+.password-toggle-icon-register, .confirm-password-toggle-icon-register {
     width: 20px;
     height: 20px;
     right: 80px;
@@ -80,11 +80,11 @@
     cursor: pointer;
 }
 
-.password-toggle-icon {
+.password-toggle-icon-register {
     top: 368px;
 }
 
-.confirm-password-toggle-icon {
+.confirm-password-toggle-icon-register {
     top: 442px;
 }
   
