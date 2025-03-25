@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import '../styles/Admin.css';
 import logo from '../Images/logo.png';
 
@@ -13,6 +13,14 @@ export function Admin() {
     { products: [''], id: 125479658658, status: '', isOpen: false },
   ]);
 
+  useEffect(() => {
+          document.body.classList.add("admin-body");
+  
+          return () => {
+              document.body.classList.remove("admin-body");
+          };
+      }, []);
+
   // otvaranje/zatvaranje detalja porudžbine
   const toggleOrderDetails = (id) => {
     setOrders(orders.map(order => 
@@ -21,7 +29,6 @@ export function Admin() {
   };
 
   // promena statusa porudžbine
-
   const handleStatusChange = (id, newStatus) => {
     setOrders(orders.map(order => 
       order.id === id ? { ...order, status: newStatus } : order
@@ -31,7 +38,7 @@ export function Admin() {
   return (
     <div className="admin-container">
       <div className="Status-bar"></div>
-      <nav className="Nav-menu">
+      <nav className="status-nav-menu">
         <img src={logo} alt="Logo" className="logo" />
       </nav>
 
@@ -49,34 +56,42 @@ export function Admin() {
           <div key={order.id} className="order-row-container">
             
             {/* Red narudžbine */}
-            <div className={`order-row ${order.isOpen ? "open" : ""}`} onClick={() => toggleOrderDetails(order.id)}>
+            <div className={`order-row ${order.isOpen ? "open" : ""}`} >
               
-              {/* Dugme za otvaranje/zatvaranje */}
-              <div className="order-item" style={{ cursor: 'pointer' }}>
-                {order.isOpen ? '▲' : '▼'}
-              </div>
+              <div className='order-item-container'>
+                  {/* Dugme za otvaranje/zatvaranje */}
+                <div className="order-item" style={{ cursor: 'pointer' }} onClick={() => toggleOrderDetails(order.id)}>
+                  {order.isOpen ? '▲' : '▼'}
+                </div>
 
-              {/* ID porudžbine */}
-              <div className="order-item order-id">{order.id}</div>
+                {/* ID porudžbine */}
+                <div className="order-item order-id">{order.id}</div>
+              </div>
 
               {/* Checkbox za "Priprema se" */}
               <div className="order-item">
-                <input
-                  type="checkbox"
-                  checked={order.status === 'Priprema se'}
-                  onChange={() => handleStatusChange(order.id, 'Priprema se')}
-                  className="order-checkbox"
-                />
+                <label htmlFor='pripremaSe' className='labelPriprema'>
+                  <input
+                    id='pripremaSe'
+                    type="checkbox"
+                    checked={order.status === 'Priprema se'}
+                    onChange={() => handleStatusChange(order.id, 'Priprema se')}
+                    className="order-checkbox"
+                  /><span></span>
+                </label>
               </div>
 
               {/* Checkbox za "Spremna" */}
               <div className="order-item">
-                <input
-                  type="checkbox"
-                  checked={order.status === 'Spremna'}
-                  onChange={() => handleStatusChange(order.id, 'Spremna')}
-                  className="order-checkbox"
-                />
+                <label htmlFor='spremna' className='labelSpremna'>
+                  <input
+                    id='spremna'
+                    type="checkbox"
+                    checked={order.status === 'Spremna'}
+                    onChange={() => handleStatusChange(order.id, 'Spremna')}
+                    className="order-checkbox"
+                  /><span></span>
+                </label>
               </div>
             </div>
 
