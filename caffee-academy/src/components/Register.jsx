@@ -50,7 +50,7 @@ export function Register() {
         fullName: { focused: false, rule1: false},
         email: { focused: false, rule1: false},
         password: { focused: false, rule1: false, rule2: false, rule3: false, rule4: false },
-        confirmPassword: { focused: false, rule1: false },
+        confirmPassword: { focused: false, rule1: false, hasValue: false },
     });
 
     const [formData, setFormData] = useState({
@@ -97,11 +97,12 @@ export function Register() {
 
     function handleChange(event) {
         const { name, value } = event.target;
-
+    
         setFocusedFields((prev) => ({
             ...prev,
             [name]: {
                 ...prev[name],
+                hasValue: value.length > 0, // Track if field has value
                 ...(name === 'fullName' && {
                     rule1: value.length > 2 && value.length < 50,
                 }),
@@ -120,7 +121,7 @@ export function Register() {
                 })
             },
         }));
-
+    
         setFormData({
             ...formData,
             [name]: value,
@@ -128,7 +129,16 @@ export function Register() {
     };
 
     function getValidationClass(fieldName) {
-        return focusedFields[fieldName].focused ? `validation-rules ${fieldName} show` : `validation-rules ${fieldName}`;
+        // For confirmPassword, only show if hasValue is true
+        if (fieldName === 'confirmPassword') {
+            return focusedFields[fieldName].hasValue 
+                ? `validation-rules ${fieldName} show` 
+                : `validation-rules ${fieldName}`;
+        }
+        // For other fields, keep existing behavior
+        return focusedFields[fieldName].focused 
+            ? `validation-rules ${fieldName} show` 
+            : `validation-rules ${fieldName}`;
     }
 
     function getContentClass(fieldName, ruleNumber) {

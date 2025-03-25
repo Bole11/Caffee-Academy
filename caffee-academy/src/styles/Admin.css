@@ -27,7 +27,8 @@
 
 .logo {
   width: 130px;
-  height: 25px;  
+  height: 25px;
+  margin-bottom: 1.2rem;  
 }
 
 .Status-container {
