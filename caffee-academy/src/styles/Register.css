@@ -70,22 +70,18 @@
     font-size: 14px;
     margin-bottom: 0.1rem;
     color: #164864;
+    position: relative;
 }
 
 .password-toggle-icon-register, .confirm-password-toggle-icon-register {
+    position: absolute;
+    right: 20px; 
+    top: 50%;
+    transform: translateY(-50%);
     width: 20px;
     height: 20px;
-    right: 80px;
-    position: absolute;
     cursor: pointer;
-}
-
-.password-toggle-icon-register {
-    top: 368px;
-}
-
-.confirm-password-toggle-icon-register {
-    top: 442px;
+    z-index: 2;
 }
   
 input {
@@ -96,6 +92,7 @@ input {
     outline: none;
     background-color: #E8E8E8;
     font-size: 11px;
+    padding-right: 40px !important;
 }
 
 input::placeholder {

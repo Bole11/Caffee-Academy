@@ -82,7 +82,7 @@
 
 .password-toggle-icon-prijava {
     position: absolute;
-    right: 30px; /* Adjust this value to position inside the input */
+    right: 20px; 
     top: 50%;
     transform: translateY(-50%);
     width: 20px;
