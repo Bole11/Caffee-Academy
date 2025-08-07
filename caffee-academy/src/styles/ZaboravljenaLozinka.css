@@ -172,11 +172,13 @@
     text-align: left;
     margin: 30px 0;
     gap: 20px;
+    width: 95%;
 }
 
 .input-password label {
     color: #164864;
     font-size: 14px;
+    position: relative;
 }
 
 .step4 h2 {
@@ -219,17 +221,12 @@ button:hover {
 }
 
 .password-toggle-icon, .confirm-password-toggle-icon {
+    position: absolute;
+    right: 20px;    
+    top: 65%;
+    transform: translateY(-50%);
     width: 20px;
     height: 20px;
-    right: 80px;
-    position: absolute;
     cursor: pointer;
-}
-
-.password-toggle-icon {
-    top: 264px;
-}
-
-.confirm-password-toggle-icon {
-    top: 347px;
+    z-index: 2;
 }
