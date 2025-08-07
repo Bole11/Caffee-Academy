@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/Status.css"; // Uvoz CSS fajla
+import "../styles/Status.css"; 
 
 import clock from '../Images/Clock.png';
 import leftArrow from '../Images/left-arrow.png';
@@ -9,10 +9,11 @@ import prirpemaKafe from '../Images/pripremaKafe.png';
 import porudzbinaSpremna from '../Images/porudzbinaSpremna.gif';
 
 export function Status() {
-    const totalTime = 10; // Ukupno vreme 15 minuta
+    const totalTime = 10; 
     const [time, setTime] = useState(totalTime);
     const [checkpoint, setCheckpoint] = useState(0);
-    const [image, setImage] = useState(porudzbinaSpremna); // Default image
+    const [image, setImage] = useState(porudzbinaSpremna); 
+    const [message, setMessage] = useState("Porudžbina je primljena");
     const navigate = useNavigate();
 
     function handleGoBack() {
@@ -41,17 +42,27 @@ export function Status() {
     }, []);
 
     useEffect(() => {
-        if (time === 5) {  // 14:00
-            setImage(prirpemaKafe);
-        }
-        if (time === 0) {  // 00:00
-            setImage(kafaGotova);
-        } 
+    if (time > 5) {
+        setCheckpoint(0);
+        setImage(porudzbinaSpremna);
+    } else if (time > 0) {
+        setCheckpoint(1);
+        setImage(prirpemaKafe);
+    } else if (time === 0) {
+        setCheckpoint(2);
+        setImage(kafaGotova);
+    }
     }, [time]);
 
     useEffect(() => {
-        setCheckpoint(Math.floor((totalTime - time) / 300)); // Menja se svakih 5 min
-    }, [time]);
+        const messages = [
+            "Porudžbina je primljena",
+            "Kafa se priprema",
+            "Kafa je spremna"
+        ];
+        setMessage(messages[checkpoint]);
+    }, [checkpoint]);
+
 
     const formatTime = (seconds) => {
         const min = String(Math.floor(seconds / 60)).padStart(2, "0");
@@ -84,7 +95,7 @@ export function Status() {
                         <span className="time-text">{formatTime(time)}</span>
                     </div>
                 </div>
-                {/* Krugovi za status */}
+
                 <div className="status-circle-container">
                     <div className={`circle ${checkpoint >= 0 ? "active-circle" : "inactive-circle"}`}>
                         {checkpoint >= 0 && <span className="checkmark">✔</span>}
@@ -99,7 +110,6 @@ export function Status() {
                     </div>
                 </div>
 
-                {/* Lista statusa */}
                 <div className="status-list">
                     <div className={`status ${checkpoint >= 0 ? "active" : "inactive"}`}>
                         Porudžbina primljena
@@ -112,13 +122,12 @@ export function Status() {
                     </div>
                 </div>
 
-                {/* Slika */}
                 <div className="div-img">
                     <img src={image} alt="Status image" />
                 </div>
-                {/* Tekst */}
+
                 <div className="div-message">
-                    <p>Porudžbina je primljena</p>
+                    <p>{message}</p>
                 </div>
             </div>
         </div>

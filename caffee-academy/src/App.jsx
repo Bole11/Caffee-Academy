@@ -1,13 +1,12 @@
-import { useState } from 'react'
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import { Register } from './components/Register'
-import { Prijava } from './components/Prijava'
-import { Homepage } from './components/Homepage'
-import { ZaboravljenaLozinka } from './components/ZaboravljenaLozinka'
-import { Profile } from './components/Profile'
-import { Admin } from './components/Admin'
-import { Status } from './components/Status'
+import { Register } from './pages/Register'
+import { Prijava } from './pages/Prijava'
+import { Homepage } from './pages/Homepage'
+import { ZaboravljenaLozinka } from './pages/ZaboravljenaLozinka'
+import { Profile } from './pages/Profile'
+import { Admin } from './pages/Admin'
+import { Status } from './pages/Status'
 
 function App() {
   
