@@ -209,32 +209,3 @@ input:focus {
     font-size: 12px;
     display: none;
 }
-
-@media (max-width: 420px) {
-    .register-form-group label img {
-        right: 90px; 
-    }
-
-    .fullName::after, .email::after, .password::after, .confirmPassword::after {
-        left: 100px;
-    }
-
-    .fullName::before, .email::before, .password::before, .confirmPassword::before {
-        left: 100px;
-    }
-}
-
-@media (min-width: 410px) {   
-    .register-form-group label img {
-        right: 540px;
-    }
-    
-    .fullName::before, .email::before, .password::before, .confirmPassword::before {
-        left: 550px;
-    }
-
-    .fullName::after, .email::after, .password::after, .confirmPassword::after {
-        left: 550px;
-    }
-}
-
