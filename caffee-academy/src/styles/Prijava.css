@@ -77,17 +77,20 @@
     font-size: 14px;
     margin-bottom: 0.1rem;
     color: #164864;
+    position: relative;
 }
 
 .password-toggle-icon-prijava {
+    position: absolute;
+    right: 30px; /* Adjust this value to position inside the input */
+    top: 50%;
+    transform: translateY(-50%);
     width: 20px;
     height: 20px;
-    right: 90px;
-    top: 370px;
-    position: absolute;
     cursor: pointer;
+    z-index: 2;
 }
-  
+ 
 input {
     width: 100%;
     padding: 10px;
@@ -96,6 +99,7 @@ input {
     outline: none;
     background-color: #E8E8E8;
     font-size: 11px;
+    padding-right: 40px !important;
 }
 
 input::placeholder {
