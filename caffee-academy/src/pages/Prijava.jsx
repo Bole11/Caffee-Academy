@@ -24,7 +24,7 @@ export function Prijava () {
     };
 
     function handlePrijaviSe() {
-        if (email === "user@quantox.academy" && password === "user") {
+        if (email === "user@gmail.com" && password === "user") {
             navigate('/profil');
         } else if (email === "admin@caffee.academy" && password === "admin") {
             navigate('/admin');
