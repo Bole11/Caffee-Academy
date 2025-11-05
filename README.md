@@ -1,8 +1,8 @@
 # Caffee-Academy
 
 Test Credentials: 
-  user: jelena.pavlovic@quantox.academy  
-  pass: jelena
+  user: user@gmail.com 
+  pass: user
 
   admin: admin@caffee.academy
   pass: admin
