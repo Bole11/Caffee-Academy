@@ -4,7 +4,6 @@
 This was a frontend project where I converted Figma designs into a fully functional e-commerce interface. I created and integrated a mock backend using Firebase to handle authentication, product data, and shopping cart functionality.
 
 ## Live Demo & Test Credentials
-- **Live Demo:** [caffee-academy.vercel.app]
 - **Test Credentials:**
   - Email: `user@example.com`
   - Pass: `user`
